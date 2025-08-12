@@ -1,12 +1,14 @@
 import Breadcrumb from "@/app/components/ui/breadcrumb";
 import BreadcrumbItem from "@/app/components/ui/breadcrumb-item";
 
-interface Props {
-    params: { disciplina: string; aula: string };
+interface AulaPageProps {
+    disciplina: string;
+    aula: string;
+
 }
 
-export default function AulaPage({ params }: Props) {
-    const { disciplina, aula } = params
+export default async function AulaPage(params: any) {
+    const { disciplina, aula } = await params as AulaPageProps
 
     return (
         <div className="p-5">
