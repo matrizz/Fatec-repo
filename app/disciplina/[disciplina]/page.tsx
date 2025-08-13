@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getAulas } from "@/lib/getData";
 import Breadcrumb from "@/app/components/ui/breadcrumb";
 import BreadcrumbItem from "@/app/components/ui/breadcrumb-item";
+import { truncate } from "@/lib/truncate";
 
 export default async function DisciplinaPage({ params }: any) {
     params = await params
@@ -10,7 +11,7 @@ export default async function DisciplinaPage({ params }: any) {
     return (
         <div className="p-5">
             <Breadcrumb home label='Disciplinas'>
-                <BreadcrumbItem href={`/disciplina/${params.disciplina}`} label={params.disciplina} />
+                <BreadcrumbItem href={`/disciplina/${params.disciplina}`} label={truncate(params.disciplina, 20)} />
             </Breadcrumb>
             <div>
                 <ul>

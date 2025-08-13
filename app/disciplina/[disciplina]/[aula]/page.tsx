@@ -1,5 +1,6 @@
 import Breadcrumb from "@/app/components/ui/breadcrumb";
 import BreadcrumbItem from "@/app/components/ui/breadcrumb-item";
+import { truncate } from "@/lib/truncate";
 
 interface AulaPageProps {
     disciplina: string;
@@ -13,8 +14,8 @@ export default async function AulaPage({params}: any) {
     return (
         <div className="p-5">
             <Breadcrumb home label='Disciplinas'>
-                <BreadcrumbItem href={`/disciplina/${disciplina}`} label={disciplina} />
-                <BreadcrumbItem href={`/disciplina/${disciplina}/${aula}`} label={aula} />
+                <BreadcrumbItem href={`/disciplina/${disciplina}`} label={truncate(disciplina, 20)} />
+                <BreadcrumbItem href={`/disciplina/${disciplina}/${aula}`} label={truncate(aula, 20)} />
             </Breadcrumb>
             <h1>{disciplina} - {aula}</h1>
             <iframe
