@@ -3,12 +3,9 @@ import { getAulas } from "@/lib/getData";
 import Breadcrumb from "@/app/components/ui/breadcrumb";
 import BreadcrumbItem from "@/app/components/ui/breadcrumb-item";
 
-interface DisciplinaPageProps {
-    disciplina: string;
-}
-
-export default function DisciplinaPage(params: any) {
-    const aulas = getAulas((params as DisciplinaPageProps).disciplina);
+export default async function DisciplinaPage({ params }: any) {
+    params = await params
+    const aulas = getAulas(params.disciplina);
 
     return (
         <div className="p-5">

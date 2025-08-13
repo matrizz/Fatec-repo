@@ -1,5 +1,5 @@
 import fs from "fs";
-import path from "path";
+import path from "node:path";
 
 const fatecDir = path.join(process.cwd(), "public", "fatec")
 

@@ -7,7 +7,7 @@ interface AulaPageProps {
 
 }
 
-export default async function AulaPage(params: any) {
+export default async function AulaPage({params}: any) {
     const { disciplina, aula } = await params as AulaPageProps
 
     return (
